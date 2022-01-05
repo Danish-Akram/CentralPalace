@@ -1,6 +1,5 @@
 @extends('layouts.dashboard')
 @section('menu')
-
       <div style="width: 800px;margin-top:30px; background:#dfe6e9" class="center">
         <header><i class="fa fa-home" aria-hidden="true"></i> / Category Maintenance / Insert Form</header>
         <div>

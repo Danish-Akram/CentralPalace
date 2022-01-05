@@ -200,7 +200,7 @@
           </div>
           <section class="home-section">
             <div class="home-content">
-              @include('navbar')
+                @include('navbar')
               @yield('menu')
 </div>
 </section>
