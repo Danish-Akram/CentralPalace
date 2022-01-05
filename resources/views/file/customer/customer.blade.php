@@ -1,8 +1,6 @@
 @extends('layouts.dashboard')
 @section('menu')
-  <section class="home-section">
-    <div class="home-content">
-      @include('navbar')
+
 <div  style="width:860px; margin-top:30px" class="center">
   <header><i class="fa fa-home" aria-hidden="true"></i> / Customer Maintenance</header>
 
@@ -61,6 +59,4 @@
 </table>
 </div>
 </div>
-    </div>
-  </section>
 @endsection

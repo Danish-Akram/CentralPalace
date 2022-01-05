@@ -1,8 +1,6 @@
 @extends('layouts.dashboard')
 @section('menu')
-  <section class="home-section">
-    <div class="home-content">
-      @include('navbar')
+
       <div style="width: 800px;margin-top:30px; background:#dfe6e9" class="center">
         <header><i class="fa fa-home" aria-hidden="true"></i> / Category Maintenance / View Form</header>
         <div>
@@ -63,7 +61,6 @@
         </div>
         </div>
         </div>
-    </div>
-  </section>
+
 
 @endsection

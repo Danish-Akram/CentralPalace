@@ -198,7 +198,12 @@
           </li>
         </ul>
           </div>
-            @yield('menu')
+          <section class="home-section">
+            <div class="home-content">
+              @include('navbar')
+              @yield('menu')
+</div>
+</section>
 </aside>
     <script src="{{asset('js/script.js')}}"></script>
     <script src="{{asset('js/jquery-3.6.0.js')}}"></script>

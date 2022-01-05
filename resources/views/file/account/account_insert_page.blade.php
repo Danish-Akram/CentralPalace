@@ -1,8 +1,6 @@
 @extends('layouts.dashboard')
 @section('menu')
-  <section class="home-section">
-    <div class="home-content">
-      @include('navbar')
+
 <div style="width: 700px;background:#dfe6e9; margin-top:30px" class="center">
 <header><i class="fa fa-home" aria-hidden="true"></i> / Account Maintenance / Insert Form</header>
 <div>
@@ -77,8 +75,7 @@
 </form>
 </div>
 </div>
-    </div>
-  </section>
+
 <script>
 
 // If a JSON string is already parsed in a JavaScript object, the JSON.parse() cannot work on it anymore.

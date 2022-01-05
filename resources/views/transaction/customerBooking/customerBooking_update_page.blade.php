@@ -1,9 +1,6 @@
 @extends('layouts.dashboard')
 @section('menu')
-  <section class="home-section">
-    <div class="home-content">
-        @include('navbar')
-        @php
+@php
 $dt = new DateTime();
 $tz = new DateTimeZone('Asia/Karachi');
 $dt->setTimeZone($tz);
@@ -386,10 +383,6 @@ $dt->setTimeZone($tz);
             </div>
         </div>
     </div>
-</div>
-
-
-</section>
 <script>
 
     // function add_to_total(el){

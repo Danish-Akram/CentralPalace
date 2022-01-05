@@ -1,8 +1,5 @@
 @extends('layouts.dashboard')
 @section('menu')
-  <section class="home-section">
-    <div class="home-content">
-      @include('navbar')
       
 <div style="width: 800px;margin-top:30px; background:#dfe6e9" class="center">
   <header><i class="fa fa-home" aria-hidden="true"></i> / Category Maintenance / Update Form</header>
@@ -64,8 +61,7 @@
   </form>
   </div>
   </div>
-    </div>
-  </section>
+
   <script>
     $(document).ready(function () { 
     $('form').submit(function(){
