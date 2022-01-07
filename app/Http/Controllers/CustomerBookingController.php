@@ -235,8 +235,37 @@ public function customerBooking_view_page($id){
 
 public function customerBooking_print_page($id){
     $customer = Glkey::find($id);
+        $data = Menu::all(); 
+        $hallDes = DB::table('glkeys')
+        ->join('halls', 'glkeys.thalcod', '=', 'halls.code')
+        ->select('glkeys.*','halls.description')
+        ->where('glkeys.id',$id)
+        ->first();
+        $funDes = DB::table('glkeys')
+        ->join('functions', 'glkeys.tfuncod', '=', 'functions.code')
+        ->select('glkeys.*','functions.description')
+        ->where('glkeys.id',$id)
+        ->first();
+        $empDes = DB::table('glkeys')
+        ->join('employees', 'glkeys.tempcod', '=', 'employees.code')
+        ->select('glkeys.*','employees.name')
+        ->where('glkeys.id',$id)
+        ->first();
+        $item = DB::table('items')
+        ->join('categories', 'items.tctgcod', '=', 'categories.tctgcod')
+        ->select('items.*','categories.tctgdsc')
+        ->get();
+        $bookitm = DB::table('glkeys')
+        ->join('book_itms', 'glkeys.ttrnnum', '=', 'book_itms.ttrnnum')
+        ->join('items', 'book_itms.titmcod', '=', 'items.titmcod')
+        ->join('categories', 'items.tctgcod', '=', 'categories.tctgcod')
+        ->select('glkeys.*', 'book_itms.titmcod', 'book_itms.tsernum','items.titmdsc','categories.tctgdsc')
+        ->where('glkeys.id',$id)
+        ->get();
     $pdf = \App::make('dompdf.wrapper');
-    $pdf->loadHTML(view('transaction.customerBooking.customerBooking_print_page', compact('customer')));
+    $pdf->loadHTML(view('transaction.customerBooking.customerBooking_print_page', compact('data',
+    'item','hallDes','funDes','empDes',
+    'customer','bookitm')));
     return $pdf->stream();
 }
 }

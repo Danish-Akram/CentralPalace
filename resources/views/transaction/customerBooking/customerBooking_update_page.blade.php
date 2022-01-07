@@ -489,17 +489,15 @@ $dt->setTimeZone($tz);
             $('.balance').val(_balance);
         });
 
-        var model = 0;
             let lineNo = 0;
+
             lineNo = $('.sernum').last().text();
-
-            $('.id').attr("id", `R${++lineNo}`);
-
+            $('.id').attr("id", `R${lineNo}`);
 
        // code to read selected table row cell data (values).
        $(".advanceTable").on('click','#itemBtn',function(){
             var currentRow=$(this).closest("tr");
-            model =currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+            var model =currentRow.find("td:eq(0)").text(); // get current row 1st TD value
             var description=currentRow.find("td:eq(1)").text(); // get current row 2nd TD        
             var category=currentRow.find("td:eq(2)").text(); // get current row 2nd TD        
 
@@ -521,6 +519,7 @@ $dt->setTimeZone($tz);
     // Getting all the rows next to the row
             // containing the clicked button
             var child = $(this).closest('tr').nextAll();
+            // var child2 = $('.id').closest('tr').nextAll();
             // Iterating across all the rows 
             // obtained to change the index
             child.each(function () {
@@ -531,11 +530,12 @@ $dt->setTimeZone($tz);
               var idx = $(this).children('.row-index');
               // Gets the row number from <tr> id.
               var dig = parseInt(id.substring(1));
-      
               // Modifying row index.
               idx.html(`${dig - 1}`);
               // Modifying row id.
               $(this).attr('id', `R${dig - 1}`);
+              $('.id').attr('id', `R${dig - 1}`);
+
             });
 
             // Removing the current row.
