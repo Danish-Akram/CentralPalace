@@ -53,7 +53,7 @@ class CustomerBookingController extends Controller
             $data->ttrnrem = strtoupper($request->cusRemarks);
             $data->tcstadd1 = strtoupper($request->address1);
             $data->tcstadd2 = strtoupper($request->address2);
-            $data->tcstema = strtoupper($request->email);
+            $data->tcstema = ($request->email);
             $data->tphnnum = ($request->mobile) ;
             $data->tcstnic = ($request->nic);
             $data->tevtdat = ($request->eventDate);
@@ -261,6 +261,7 @@ public function customerBooking_print_page($id){
         ->join('categories', 'items.tctgcod', '=', 'categories.tctgcod')
         ->select('glkeys.*', 'book_itms.titmcod', 'book_itms.tsernum','items.titmdsc','categories.tctgdsc')
         ->where('glkeys.id',$id)
+        ->orderby('categories.tctgdsc')
         ->get();
     $pdf = \App::make('dompdf.wrapper');
     $pdf->loadHTML(view('transaction.customerBooking.customerBooking_print_page', compact('data',

@@ -35,7 +35,7 @@ $dt->setTimeZone($tz);
           </div>
           <div>
                 <label style="width: 8% !important" for="description"  > Remarks : </label>
-                <input  type="text" id="cusRemarks" readonly name="cusRemarks" value="{{ $glkey->ttrnrem}}" class="form-control" size="60" maxlength="40">      
+                <input  type="text" id="cusRemarks" name="cusRemarks" value="{{ $glkey->ttrnrem}}" class="form-control" size="60" maxlength="40">      
         </div>
           <div >
                 <label style="width: 8% !important"> Address 1 :</label>
@@ -47,7 +47,7 @@ $dt->setTimeZone($tz);
         </div>
         <div class="row">
                 <label  style="width: 8% !important"> Email : </label>
-                <input  type="email" name="email" class="form-control email" id="email" readonly value="{{ $glkey->tcstema}}" size="60" maxlength = "40"  style="text-transform: lowercase !important">    
+                <input  type="email" name="email" class="form-control email" id="email" readonly value="{{ $glkey->tcstema}}" size="60" maxlength = "40">    
         </div>
         <div>
             <span>
