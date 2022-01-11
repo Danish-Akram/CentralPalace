@@ -10,8 +10,8 @@ font-size:16px ;
    input{
       font-size:14px;
    }
-
-
+   @font-face {font-family: "Verdana"; src: url("//db.onlinewebfonts.com/t/1ae9b9868bd3121e932225b140a839a5.eot");}
+       
 </style>
 </head>
 <body>
@@ -153,25 +153,21 @@ border-right: 0px; border-left: 0px; border-top: 0px; text-align:right;" id="oth
 <span >
 <div style=" margin-left :330px;margin-top:12px;">
 
+<table>
+   <thead></thead>
 
-
-
-<!-- <table style="width:89%; text-align:center">
-      <thead class="">
-                </thead>
-                <tbody>
+                <tbody id="mybody">
                     @foreach ($bookitm as $table)
-                        <tr>
-                           <td>{{$loop->index+1}}</td>
-                           <td>{{ $table->tctgdsc }}</td>
-                           if($table->tctgdsc == $table->titmcod){
-                              <td>{{ $table->titmdsc }}</td>
-                           }
-                            
+                        <tr class="id">
+                        <td>{{ $table->titmcod }}</td>
+                            <td>{{ $table->titmdsc }}</td>
+                            <td>{{ $table->tctgdsc }}</td>                        
                         </tr>
                     @endforeach
                 </tbody>
-            </table> -->
+            </table>
+
+
 <!-- <label for="others" style="margin-top:12px ">01 :</label>
 <input type="text" style=" border-bottom:2 px solid black;
 border-right: 0px; border-left: 0px; border-top: 0px;margin-top:10px;" id="others" name="others" value="" size="8">
@@ -224,7 +220,7 @@ border-right: 0px; border-left: 0px; border-top: 0px;margin-top:10px;" id="other
 </div>-->
 </span>
 </div>
-<div style="margin-top:160px; width:311px;">
+<div style="margin-top:130px; width:311px;">
 <textarea value=""><strong> Remarks: </strong> <i>{{$customer->ttrnrem}}</i></textarea>
 </div>
 <div>

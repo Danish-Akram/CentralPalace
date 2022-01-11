@@ -259,9 +259,10 @@ public function customerBooking_print_page($id){
         ->join('book_itms', 'glkeys.ttrnnum', '=', 'book_itms.ttrnnum')
         ->join('items', 'book_itms.titmcod', '=', 'items.titmcod')
         ->join('categories', 'items.tctgcod', '=', 'categories.tctgcod')
-        ->select('glkeys.*', 'book_itms.titmcod', 'book_itms.tsernum','items.titmdsc','categories.tctgdsc')
+        ->select ('glkeys.*', 'book_itms.titmcod', 'book_itms.tsernum','items.titmdsc','categories.tctgdsc')
         ->where('glkeys.id',$id)
         ->orderby('categories.tctgdsc')
+        ->distinct('categories.tctgdsc')
         ->get();
     $pdf = \App::make('dompdf.wrapper');
     $pdf->loadHTML(view('transaction.customerBooking.customerBooking_print_page', compact('data',

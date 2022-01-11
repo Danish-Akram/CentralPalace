@@ -48,6 +48,7 @@
               <a href="{{route('customerBooking_print_page', $_data->id)}}"><i class="fas fa-print"></i></a></td>
             </tr>
             @endforeach
+</tbody>
       </table>
       </div>
       </div>      

@@ -104,3 +104,7 @@ Route::get('home/customer/customerBooking_update_page/{id}', [App\Http\Controlle
 Route::post('home/customer/customerBooking_update_data/{id}', [App\Http\Controllers\CustomerBookingController::class, 'customerBooking_update_data'])->name('customerBooking_update_data')->middleware('isLogged');
 Route::get('home/customer/customerBooking_view_page/{id}', [App\Http\Controllers\CustomerBookingController::class, 'customerBooking_view_page'])->name('customerBooking_view_page')->middleware('isLogged');
 Route::get('home/customer/customerBooking_print_page/{id}', [App\Http\Controllers\CustomerBookingController::class, 'customerBooking_print_page'])->name('customerBooking_print_page')->middleware('isLogged');
+
+
+
+Route::get('/bookingList', [App\Http\Controllers\BookingListController::class, 'report'])->name('bookingList')->middleware('isLogged');
