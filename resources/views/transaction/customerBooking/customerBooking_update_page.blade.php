@@ -18,45 +18,45 @@ $dt->setTimeZone($tz);
                 <label style="width: 8% !important" for="bookigId">Booking ID :</label>
                 <input type="text" name="bookingId" size="10" readonly class="form-control" id="" value="{{ $glkey->ttrnnum}}">
               </span>
-           
+
                 <span style="margin-left:358px">
                     <label style="width: 99px !important; margin-left:11px" for="">Booking Date :</label>
                     <input type="text" name="bookingDate" size="10"  class="form-control" id="" style="width: 130px !important"  value="{{ $glkey->ttrndat}}">
-                </span> 
+                </span>
                 <span>
                     <label style="width:50px !important; margin-left:10px !important" for="time">Time :</label>
                     <input type="text" name="bookingtime" size="5" style="width:80px" class="form-control" id="time" value="{{ $glkey->ttrntim}}" >
-                </span>  
+                </span>
           </div>
           <div>
                 <label style="width: 8% !important" for="code"> Code :</label>
-                <input  type="text" id="cusBtn" name="cusCode" value="{{ $glkey->trefcod}}" class="form-control cusCode" size= "10" readonly style="background-color: #d1ccc0">    
-                <input  type="text" id="cusName" name="cusName" value="{{ $glkey->tcstnam}}" class="form-control cusName" size="60" maxlength="40" readonly>      
+                <input  type="text" id="cusBtn" name="cusCode" value="{{ $glkey->trefcod}}" class="form-control cusCode" size= "10" readonly style="background-color: #d1ccc0">
+                <input  type="text" id="cusName" name="cusName" value="{{ $glkey->tcstnam}}" class="form-control cusName" size="60" maxlength="40" readonly>
           </div>
           <div>
                 <label style="width: 8% !important" for="description"  > Remarks : </label>
-                <input  type="text" id="cusRemarks" name="cusRemarks" value="{{ $glkey->ttrnrem}}" class="form-control" size="60" maxlength="40">      
+                <input  type="text" id="cusRemarks" name="cusRemarks" value="{{ $glkey->ttrnrem}}" class="form-control" size="60" maxlength="40">
         </div>
           <div >
                 <label style="width: 8% !important"> Address 1 :</label>
-                <input  type="text" name="address1"  class="form-control address1"  maxLength="40" size="60" value="{{ $glkey->tcstadd1}}"  readonly>    
-        </div>       
+                <input  type="text" name="address1"  class="form-control address1"  maxLength="40" size="60" value="{{ $glkey->tcstadd1}}"  readonly>
+        </div>
         <div>
                 <label style="width: 8% !important"> Address 2 :</label>
-                <input  type="text" name="address2" class="form-control address2"  maxLength="40" size="60" value="{{ $glkey->tcstadd2}}" readonly>    
+                <input  type="text" name="address2" class="form-control address2"  maxLength="40" size="60" value="{{ $glkey->tcstadd2}}" readonly>
         </div>
         <div class="row">
                 <label  style="width: 8% !important"> Email : </label>
-                <input  type="email" name="email" class="form-control email" id="email" readonly value="{{ $glkey->tcstema}}" size="60" maxlength = "40">    
+                <input  type="email" name="email" class="form-control email" id="email" readonly value="{{ $glkey->tcstema}}" size="60" maxlength = "40">
         </div>
         <div>
             <span>
                 <label  style="width: 8% !important"> Mobile : </label>
-                <input  type="text" name="mobile" class="form-control mobile" id="mobile" readonly value="{{ $glkey->tphnnum}} " maxlength = "11" onkeypress='validate(event)'>    
+                <input  type="text" name="mobile" class="form-control mobile" id="mobile" readonly value="{{ $glkey->tphnnum}} " maxlength = "11" onkeypress='validate(event)'>
             </span>
             <span>
                 <label style="width: 75px !important" > NIC : </label>
-                <input  type="text" name="nic" id="nic" class="form-control nic" readonly maxlength = "15" onkeypress='validate(event)' value=" {{ $glkey->tcstnic}} " >    
+                <input  type="text" name="nic" id="nic" class="form-control nic" readonly maxlength = "15" onkeypress='validate(event)' value=" {{ $glkey->tcstnic}} " >
             </span>
             <span  >
                 <span style="border-left: 2px solid #4096C4"></span>
@@ -67,14 +67,14 @@ $dt->setTimeZone($tz);
         <div>
             <span>
                 <label style="width: 80px !important" > Hall : </label>
-                <input  type="text" name="hallname" size="60" id="hallBtn" value="{{ $hallDes->description}}" class="form-control hallName" readonly style="background-color: #d1ccc0">   
-                <input  type="text" name="hallCode" size="60" id="" value="{{$glkey->thalcod}}" class="form-control hallCode" hidden>        
-     
+                <input  type="text" name="hallname" size="60" id="hallBtn" value="{{ $hallDes->description}}" class="form-control hallName" readonly style="background-color: #d1ccc0">
+                <input  type="text" name="hallCode" size="60" id="" value="{{$glkey->thalcod}}" class="form-control hallCode" hidden>
+
             </span>
             <span >
                 <span style="border-left: 2px solid #4096C4"></span>
                 <label style="width: 11% !important; margin-left:0px !important" for="code"> No of Guest :</label>
-                <input  type="text" id="numGuest" name="numGuest" size="10" class="form-control right format guest" value="{{ $glkey->tgstnum}}"  onkeypress='validate(event)'>      
+                <input  type="text" id="numGuest" name="numGuest" size="10" class="form-control right format guest" value="{{ $glkey->tgstnum}}"  onkeypress='validate(event)'>
               </span>
               <span>
                 <label style="display: inline !important; width: 40px !important; margin-left:21px !important"> Per Head :</label>
@@ -85,23 +85,23 @@ $dt->setTimeZone($tz);
             <span>
                 <label  style="width: 8% !important"> Function : </label>
                 <input  type="text" name="funName" class="form-control funName" id="funBtn" style="background-color: #d1ccc0" value="{{ $funDes->description}}" maxlength = "11" onkeypress='validate(event)'>
-                <input  type="text" name="funCode" class="form-control funCode" hidden maxlength = "11" onkeypress='validate(event)' value="{{$glkey->tfuncod}}">    
-    
+                <input  type="text" name="funCode" class="form-control funCode" hidden maxlength = "11" onkeypress='validate(event)' value="{{$glkey->tfuncod}}">
+
             </span>
             <span>
                 <label  style="width: 75px !important"> Employee : </label>
-                <input  type="text" name="employeeName" class="form-control employeeName" id="empBtn" style="background-color: #d1ccc0"  value="{{ $empDes->name}}"  maxlength = "11" onkeypress='validate(event)'>    
-                <input  type="text" name="employeeCode" hidden value="{{$glkey->tempcod}}" class="form-control employeeCode" id="empBtn" style="background-color: #d1ccc0" maxlength = "11" onkeypress='validate(event)'>    
+                <input  type="text" name="employeeName" class="form-control employeeName" id="empBtn" style="background-color: #d1ccc0"  value="{{ $empDes->name}}"  maxlength = "11" onkeypress='validate(event)'>
+                <input  type="text" name="employeeCode" hidden value="{{$glkey->tempcod}}" class="form-control employeeCode" id="empBtn" style="background-color: #d1ccc0" maxlength = "11" onkeypress='validate(event)'>
             </span>
             <span  style="">
                 <span style="border-left: 2px solid #4096C4"></span>
                 <label for="" style="width: 8% !important;" for="timeFrom">Time From :</label>
                 <input type="text" name="timefrom" size="10"  class="form-control" id="timeFrom" value="{{ $glkey->ttimfrm}}">
-            </span> 
+            </span>
             <span>
                 <label style="display: inline !important; margin-left:26px" for="timeTo">Time To :</label>
                 <input type="text" name="timeto" size="10"  class="form-control" id="timeTo" value="{{ $glkey->ttimtoo}}">
-            </span> 
+            </span>
         </div>
 
         <hr class="style1">
@@ -132,7 +132,7 @@ $dt->setTimeZone($tz);
                     @endforeach
                 </tbody>
             </table>
-  
+
         </span>
           <span style="float: right; width:320px;">
                         <span class="row">
@@ -173,7 +173,7 @@ $dt->setTimeZone($tz);
 
 
 <hr class="style1">
-        
+
 <div class="row" style="margin: 0 170px; padding:2px">
 <button type="submit" id="submit" class="button">Submit</button>
 <button type="button" class="button" onclick="window.location='{{route('customerBooking')}}'">Return</button>
@@ -193,7 +193,7 @@ $dt->setTimeZone($tz);
               <i class="fa fa-home" aria-hidden="true"></i> / Item Sale Maintanance / Item Info
           </header>
       </div>
-     
+
       <div class="modal-body">
           <div style="height: 250px;overflow-y: scroll; ">
               <input type="text" placeholder="Search..." id="myInput" onkeyup="myFunction()" class="form-control" >
@@ -203,7 +203,7 @@ $dt->setTimeZone($tz);
                           <th scope="col" width="100px">Code</th>
                           <th scope="col" width="445px">Description</th>
                           <th scope="col" width="100px">Category</th>
-                        
+
 
                       </tr>
                   </thead>
@@ -243,7 +243,7 @@ $dt->setTimeZone($tz);
                         <tr>
                             <th width="100px">Code</th>
                             <th width="445px">Name</th>
-                        
+
 
                         </tr>
                     </thead>
@@ -391,11 +391,11 @@ $dt->setTimeZone($tz);
     //             var qunatity =  parent.find('#quantity').text() == "" ? 1 : parent.find('#quantity').text();
     //             var total = cost * qunatity;
     //             parent.find('#amount').val(total);
-    
+
     //             console.log(total);
     // }
     $(document).ready(function(){
-   
+
         $('#mobile').focusout(function(){
             var _token   = $('meta[name="csrf-token"]').attr('content');
                 $.ajax({
@@ -413,7 +413,7 @@ $dt->setTimeZone($tz);
                             $('#address1').val(response.tadd001);
                             $('#address2').val(response.tadd002);
                             $('.saleManCode').val(response.tempcod);
-    
+
                         }else{
                             $('#mobileStatus').val('New User');
                             $('#name').val("");
@@ -430,7 +430,7 @@ $dt->setTimeZone($tz);
         $('.custable .format').each(function(){
             const formatter = new Intl.NumberFormat('en');
             var x = parseFloat($(this).text());
-            
+
             if ($.isNumeric(x)) {
                 if (Math.floor(x) != x) {
                     $(this).text(formatter.format(x));
@@ -444,7 +444,7 @@ $dt->setTimeZone($tz);
         });
         function numberWithCommas(number) {
             const formatter = new Intl.NumberFormat('en');
-            
+
             if ($.isNumeric(number)) {
                 if (Math.floor(number) != number) {
                    return formatter.format(number);
@@ -471,7 +471,7 @@ $dt->setTimeZone($tz);
             acChg = acChg || 0;
             var decorChg = parseFloat($('.decorChg').val().replace(/,/g, ''));
             decorChg = decorChg || 0;
-            var djChg = parseFloat($('.djChg').val().replace(/,/g, ''));    
+            var djChg = parseFloat($('.djChg').val().replace(/,/g, ''));
             djChg = djChg || 0;
             var heatingChg = parseFloat($('.heatingChg').val().replace(/,/g, ''));
             heatingChg = heatingChg || 0;
@@ -498,32 +498,32 @@ $dt->setTimeZone($tz);
        $(".advanceTable").on('click','#itemBtn',function(){
             var currentRow=$(this).closest("tr");
             var model =currentRow.find("td:eq(0)").text(); // get current row 1st TD value
-            var description=currentRow.find("td:eq(1)").text(); // get current row 2nd TD        
-            var category=currentRow.find("td:eq(2)").text(); // get current row 2nd TD        
+            var description=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+            var category=currentRow.find("td:eq(2)").text(); // get current row 2nd TD
 
-            // var cost=currentRow.find("td:eq(2)").text(); // get current row 2nd TD   
-            // var rate=currentRow.find("td:eq(3)").text(); // get current row 2nd TD   
+            // var cost=currentRow.find("td:eq(2)").text(); // get current row 2nd TD
+            // var rate=currentRow.find("td:eq(3)").text(); // get current row 2nd TD
             $('#mybody').append(`
             <tr id="R${++lineNo}">
             <td class="row-index"  style="padding-left:0px !important"><input id="" class="surnam form-control" readonly name="tsernum[]" size="10" value="${lineNo}"></td>
                 <td style="padding-left:0px !important"><input class="item form-control" readonly name="titmcod[]" size="10" value="${model}"></td>
                 <td>${description}</td>
-                <td>${category}</td>             
+                <td>${category}</td>
                 <td><i class='fa fa-trash' aria-hidden='true'></i></td>
                 </tr>`);
                 advanceModal.style.display = "none";
-                
+
         });
-    
+
         $('#mybody').on('click', '.fa-trash', function(){
     // Getting all the rows next to the row
             // containing the clicked button
             var child = $(this).closest('tr').nextAll();
             // var child2 = $('.id').closest('tr').nextAll();
-            // Iterating across all the rows 
+            // Iterating across all the rows
             // obtained to change the index
             child.each(function () {
-    
+
               // Getting <tr> id.
               var id = $(this).attr('id');
               // Getting the <p> inside the .row-index class.
@@ -547,16 +547,16 @@ $dt->setTimeZone($tz);
             var totalCost=0;
             var _cost = ($(this).closest('tr').find(".cost").text());
             var cost = parseFloat(_cost.replace(/,/g, ''));
-    
+
                 cost = cost || 0;
                 var __totalCost = $('#totalCost').val();
                 var totalCost = parseFloat(__totalCost.replace(/,/g, ''));
                 totalCost -= cost;
                 var _totalCost =  numberWithCommas(totalCost);
                 if(totalCost < 0 ){
-                    $("#totalCost").val(0); 
+                    $("#totalCost").val(0);
                 }else{
-                    $("#totalCost").val(_totalCost); 
+                    $("#totalCost").val(_totalCost);
                 }
                 // var totalRate = 0;
                 // var rate = ($(this).closest('tr').find(".rate").text());
@@ -568,7 +568,7 @@ $dt->setTimeZone($tz);
                 var quantity = ($(this).closest('tr').find(".quantity").text());
                 totalQuantity = $('#totalQuantity').val();
                 quantity = quantity || 0;
-    
+
                 totalQuantity -= quantity;
                 if(totalQuantity < 0){
                     $("#totalQuantity").val(0);
@@ -578,26 +578,26 @@ $dt->setTimeZone($tz);
                 var totalAmount = 0;
                 var _amount = ($(this).closest('tr').find(".amount").text());
                 var amount = parseFloat(_amount.replace(/,/g, ''));
-    
+
                 var __totalAmount = $('#totalAmount').val();
                 var totalAmount = parseFloat(__totalAmount.replace(/,/g, ''));
-    
+
                 amount = amount || 0;
                 totalAmount -= amount;
                 var _totalAmount =  numberWithCommas(totalAmount);
                 if(totalAmount < 0){
                     $("#totalAmount").val(0);
-    
+
                 }else{
                     $("#totalAmount").val(_totalAmount);
                 }
-       
-            
+
+
        });
        $(".expenseTable").on('click','#btnSelect1',function(){
             // get the current row
             var currentRow=$(this).closest("tr");
-    
+
             var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
             var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
             var col3=currentRow.find("td:eq(2)").text(); // get current row 1st TD value
@@ -620,7 +620,7 @@ $dt->setTimeZone($tz);
     $(".employeeTable").on('click','#btnSelect2',function(){
             // get the current row
             var currentRow=$(this).closest("tr");
-    
+
             var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
             var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
             $('.employeeCode').val(col1);
@@ -630,7 +630,7 @@ $dt->setTimeZone($tz);
        $(".hallTable").on('click','#btnSelect3',function(){
             // get the current row
             var currentRow=$(this).closest("tr");
-    
+
             var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
             var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
             $('.hallCode').val(col1);
@@ -640,7 +640,7 @@ $dt->setTimeZone($tz);
        $(".functionTable").on('click','#btnSelect4',function(){
             // get the current row
             var currentRow=$(this).closest("tr");
-    
+
             var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
             var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
             $('.funCode').val(col1);
@@ -657,7 +657,7 @@ $dt->setTimeZone($tz);
     hall_modal_close.onclick = function() {
         hallModal.style.display = "none";
     }
-    
+
     window.onclick = function(event) {
         if (event.target == hallModal) {
             hallModal.style.display = "none";
@@ -674,7 +674,7 @@ $dt->setTimeZone($tz);
     fun_modal_close.onclick = function() {
         funModal.style.display = "none";
     }
-    
+
     window.onclick = function(event) {
         if (event.target == funModal) {
             funModal.style.display = "none";
@@ -685,34 +685,34 @@ $dt->setTimeZone($tz);
        var itemSale_cust_modal_close = document.getElementsByClassName("itemSale_cust_modal_close")[0];
        var cusBtn = document.getElementById("cusBtn");
         var customerModal = document.getElementById("customerModal");
-    
+
         cusBtn.onclick = function() {
             customerModal.style.display = "block";
     }
-    
+
     itemSale_cust_modal_close.onclick = function() {
         customerModal.style.display = "none";
     }
-    
+
     window.onclick = function(event) {
         if (event.target == customerModal) {
             customerModal.style.display = "none";
         }
     }
-    
-    
+
+
     var itemSale_emp_modal_close = document.getElementsByClassName("itemSale_emp_modal_close")[0];
        var empBtn = document.getElementById("empBtn");
         var employeeModal = document.getElementById("employeeModal");
-    
+
         empBtn.onclick = function() {
             employeeModal.style.display = "block";
     }
-    
+
     itemSale_emp_modal_close.onclick = function() {
         employeeModal.style.display = "none";
     }
-    
+
     window.onclick = function(event) {
         if (event.target == employeeModal) {
             employeeModal.style.display = "none";

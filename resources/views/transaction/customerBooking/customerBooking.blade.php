@@ -22,9 +22,9 @@
         <tbody>
           @foreach($customerBooking as $_data)
           @if ($_data->tcststs == "N")
-         
+
           <tr class="tr">
-          @endif  
+          @endif
               <td>{{$_data->ttrnnum}}</td>
               <td>{{$_data->tcstnam}}</td>
               @if ($_data->tcststs == "A")
@@ -36,20 +36,20 @@
                 <td>{{ $_data->tcreated_by }}</td>
               @else
                 <td>{{ $_data->tupdated_by }}</td>
-              @endif 
+              @endif
               @if($_data->tupdated_at == "")
               <td>{{date('d-m-Y', strtotime($_data->created_at))}}</td>
             @else
             <td>{{date('d-m-Y', strtotime($_data->updated_at))}}</td>
-            @endif      
-            
+            @endif
+
               <td><a href="{{route('customerBooking_update_page', $_data->id)}}"><i class="far fa-edit"></i></a>
               <a href="{{route('customerBooking_view_page', $_data->id)}}"><i class="fas fa-eye"></i></a>
-              <a href="{{route('customerBooking_print_page', $_data->id)}}"><i class="fas fa-print"></i></a></td>
+              <a target="_blank" href="{{route('customerBooking_print_page',  $_data->id)}}"><i class="fas fa-print"></i></a></td>
             </tr>
             @endforeach
 </tbody>
       </table>
       </div>
-      </div>      
+      </div>
 @endsection

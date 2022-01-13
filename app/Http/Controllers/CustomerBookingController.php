@@ -37,7 +37,7 @@ class CustomerBookingController extends Controller
         $function = Functions::all();
         $trnnum = Glkey::max('ttrnnum')+1;
         $employee = Employee::all();
-        return view('transaction.customerBooking.customerBooking_insert_btn', ['data'=> $data] ,compact('user', 
+        return view('transaction.customerBooking.customerBooking_insert_btn', ['data'=> $data] ,compact('user',
         'item','hall','function','customer','trnnum','employee'));
         }
     }
@@ -71,8 +71,8 @@ class CustomerBookingController extends Controller
             $data->thetchg = ($request->haetingChg);
             $data->ttrntot = ($request->totalAmt);
             $data->tadvamt = ($request->advance);
-            $data->tbalamt = $request->balance;  
-            $data->ttrntyp = 'bok';  
+            $data->tbalamt = $request->balance;
+            $data->ttrntyp = 'bok';
             $data->save();
             // $booking->ttrnnum = $request->bookingId;
             // $booking->titmcod = $request->titmcod;
@@ -85,11 +85,13 @@ class CustomerBookingController extends Controller
                 $booking->ttrnnum = $request->bookingId;
                 $booking->titmcod = $request->titmcod[$i];
                 $booking->tsernum = $request->tsernum[$i];
+                $booking->titmdsc = $request->titmdsc[$i];
+                $booking->titmctg = $request->titmctg[$i];
                 $booking->save();
             }
         }else{
 
-        }   
+        }
             return redirect()->route('customerBooking');
         }
     }
@@ -97,7 +99,7 @@ class CustomerBookingController extends Controller
         if(session()->has('LoggedUser')){
             $user =DB::table('users')->where('id' ,session('LoggedUser'))->first();
             $glkey = Glkey::find($id);
-            $data = Menu::all(); 
+            $data = Menu::all();
             $hall = Hall::all();
             $hallDes = DB::table('glkeys')
             ->join('halls', 'glkeys.thalcod', '=', 'halls.code')
@@ -166,8 +168,8 @@ public function customerBooking_update_data(Request $request, $id){
         $data->thetchg = ($request->haetingChg);
         $data->ttrntot = ($request->totalAmt);
         $data->tadvamt = ($request->advance);
-        $data->tbalamt = $request->balance;  
-        $data->ttrntyp = 'bok';  
+        $data->tbalamt = $request->balance;
+        $data->ttrntyp = 'bok';
         $data->save();
         // $booking->ttrnnum = $request->bookingId;
         // $booking->titmcod = $request->titmcod;
@@ -185,7 +187,7 @@ public function customerBooking_update_data(Request $request, $id){
         }else{
 
         }
-       
+
 
         return redirect()->route('customerBooking');
     }
@@ -195,7 +197,7 @@ public function customerBooking_view_page($id){
     if(session()->has('LoggedUser')){
         $user =DB::table('users')->where('id' ,session('LoggedUser'))->first();
         $glkey = Glkey::find($id);
-        $data = Menu::all(); 
+        $data = Menu::all();
         $hall = Hall::all();
         $hallDes = DB::table('glkeys')
         ->join('halls', 'glkeys.thalcod', '=', 'halls.code')
@@ -235,7 +237,7 @@ public function customerBooking_view_page($id){
 
 public function customerBooking_print_page($id){
     $customer = Glkey::find($id);
-        $data = Menu::all(); 
+        $data = Menu::all();
         $hallDes = DB::table('glkeys')
         ->join('halls', 'glkeys.thalcod', '=', 'halls.code')
         ->select('glkeys.*','halls.description')
@@ -255,15 +257,14 @@ public function customerBooking_print_page($id){
         ->join('categories', 'items.tctgcod', '=', 'categories.tctgcod')
         ->select('items.*','categories.tctgdsc')
         ->get();
-        $bookitm = DB::table('glkeys')
-        ->join('book_itms', 'glkeys.ttrnnum', '=', 'book_itms.ttrnnum')
-        ->join('items', 'book_itms.titmcod', '=', 'items.titmcod')
-        ->join('categories', 'items.tctgcod', '=', 'categories.tctgcod')
-        ->select ('glkeys.*', 'book_itms.titmcod', 'book_itms.tsernum','items.titmdsc','categories.tctgdsc')
+        $bookitm = DB::table('book_itms')
+        ->join('glkeys', 'book_itms.ttrnnum', '=', 'glkeys.ttrnnum')
         ->where('glkeys.id',$id)
-        ->orderby('categories.tctgdsc')
-        ->distinct('categories.tctgdsc')
+        ->orderBy('book_itms.titmctg')
+        ->select('book_itms.titmctg','book_itms.titmdsc')
         ->get();
+
+
     $pdf = \App::make('dompdf.wrapper');
     $pdf->loadHTML(view('transaction.customerBooking.customerBooking_print_page', compact('data',
     'item','hallDes','funDes','empDes',

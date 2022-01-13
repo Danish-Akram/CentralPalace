@@ -9,9 +9,8 @@ font-size:16px ;
    }
    input{
       font-size:14px;
-   }
-   @font-face {font-family: "Verdana"; src: url("//db.onlinewebfonts.com/t/1ae9b9868bd3121e932225b140a839a5.eot");}
-       
+    }
+
 </style>
 </head>
 <body>
@@ -23,7 +22,7 @@ font-size:16px ;
          <h2 style="margin-left:150px;width:50% !important;margin-bottom:0px !important; ;margin-top:0px !important;">Central Palace</h2>
          <label for="" style="margin-left:105px;">Firdous Market, Gulberg III, Lahore.</label>
          <label for="" style="margin-left:120px;">0300-4869499, 0322-4011119</label>
-        
+
 
                   <!-- <label for="" style="margin-top:5px;width: 20.4%!important">Address :</label>
                   <input type="text" style="margin-top:5px;  border-bottom:2 px solid black;
@@ -59,8 +58,8 @@ font-size:16px ;
          border-right: 0px; border-left: 0px; border-top: 0px" size="20" id="others" name="others" value="{{$customer->tcstema}}"><br>
       </fieldset>
       </span>
-   
-      
+
+
    </div>
    <div>
    <fieldset style="width:76%">
@@ -123,8 +122,8 @@ border-right: 0px; border-left: 0px; border-top: 0px; text-align:right;" id="oth
  border-right: 0px; border-left: 0px; border-top: 0px; text-align:right;" id="others" name="others" value="{{$customer->tdjchg}}" size="8">
     <label for="others" >Rs</label>
 <br>
- 
- 
+
+
  <label for="others" style="width: 45%!important;"> Heating Charges :</label>
 <input type="text" style="  border-bottom:2 px solid black;
 border-right: 0px; border-left: 0px; border-top: 0px; text-align:right;" id="others" name="others" value="{{$customer->thetchg}}" size="8">
@@ -157,13 +156,25 @@ border-right: 0px; border-left: 0px; border-top: 0px; text-align:right;" id="oth
    <thead></thead>
 
                 <tbody id="mybody">
-                    @foreach ($bookitm as $table)
-                        <tr class="id">
-                        <td>{{ $table->titmcod }}</td>
-                            <td>{{ $table->titmdsc }}</td>
-                            <td>{{ $table->tctgdsc }}</td>                        
-                        </tr>
-                    @endforeach
+
+                    @for($i=0; $i < 2; $i++){
+                    <tr>
+                        <td> {{ $i}}</td>
+                        <td>{{ $bookitm[$i]->titmctg}}</td><br>
+                        @if($bookitm[$i]->titmctg == $bookitm[$i+1]->titmctg){
+                            @for($j=0; $j < 2; $j++){
+                                <tr>
+                                    <td> {{ $j}}</td>
+                                    <td>{{ $bookitm[$j]->titmdsc}}</td><br>
+                                </tr>
+                                }
+                                @endfor
+                        }
+                        @endif
+                    </tr>
+                    }
+                    @endfor
+
                 </tbody>
             </table>
 
