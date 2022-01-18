@@ -29,19 +29,19 @@
 
         <div class="profile_dd">
           <ul class="profile_ul">
-            <li class="profile_li"><a class="profile" href="#"><span class="picon"><i class="fas fa-user-alt"></i>
+            {{-- <li class="profile_li"><a class="profile" href="#"><span class="picon"><i class="fas fa-user-alt"></i>
                 </span>Profile</a>
               <div class="btn">My Account</div>
             </li>
             <li><a class="address" href="#"><span class="picon"><i class="fas fa-map-marker"></i></span>Address</a></li>
-            <li><a class="settings" href="#"><span class="picon"><i class="fas fa-cog"></i></span>Settings</a></li>
+            <li><a class="settings" href="#"><span class="picon"><i class="fas fa-cog"></i></span>Settings</a></li> --}}
             <li><a class="logout" href="{{ route('logout') }}"><span class="picon"><i class="fas fa-sign-out-alt"></i></span>Logout</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  
+
   <div class="popup">
     <div class="shadow"></div>
     <div class="inner_popup">
@@ -50,91 +50,91 @@
                 <li class="title">
                     <p>All Notifications</p>
                     <p class="close"><i class="fas fa-times" aria-hidden="true"></i></p>
-                </li> 
+                </li>
                 <li class="starbucks success">
                     <div class="notify_icon">
-                        <span class="icon"></span>  
+                        <span class="icon"></span>
                     </div>
                     <div class="notify_data">
                         <div class="title">
-                            Lorem, ipsum dolor.  
+                            Lorem, ipsum dolor.
                         </div>
                         <div class="sub_title">
                           Lorem ipsum dolor sit amet consectetur.
                       </div>
                     </div>
                     <div class="notify_status">
-                        <p>Success</p>  
+                        <p>Success</p>
                     </div>
-                </li>  
+                </li>
                 <li class="baskin_robbins failed">
                     <div class="notify_icon">
-                        <span class="icon"></span>  
+                        <span class="icon"></span>
                     </div>
                     <div class="notify_data">
                         <div class="title">
-                            Lorem, ipsum dolor.  
+                            Lorem, ipsum dolor.
                         </div>
                         <div class="sub_title">
                           Lorem ipsum dolor sit amet consectetur.
                       </div>
                     </div>
                     <div class="notify_status">
-                        <p>Failed</p>  
+                        <p>Failed</p>
                     </div>
-                </li> 
+                </li>
                 <li class="mcd success">
                     <div class="notify_icon">
-                        <span class="icon"></span>  
+                        <span class="icon"></span>
                     </div>
                     <div class="notify_data">
                         <div class="title">
-                            Lorem, ipsum dolor.  
+                            Lorem, ipsum dolor.
                         </div>
                         <div class="sub_title">
                           Lorem ipsum dolor sit amet consectetur.
                       </div>
                     </div>
                     <div class="notify_status">
-                        <p>Success</p>  
+                        <p>Success</p>
                     </div>
-                </li>  
+                </li>
                 <li class="pizzahut failed">
                     <div class="notify_icon">
-                        <span class="icon"></span>  
+                        <span class="icon"></span>
                     </div>
                     <div class="notify_data">
                         <div class="title">
-                            Lorem, ipsum dolor.  
+                            Lorem, ipsum dolor.
                         </div>
                         <div class="sub_title">
                           Lorem ipsum dolor sit amet consectetur.
                       </div>
                     </div>
                     <div class="notify_status">
-                        <p>Failed</p>  
+                        <p>Failed</p>
                     </div>
-                </li> 
+                </li>
                 <li class="kfc success">
                     <div class="notify_icon">
-                        <span class="icon"></span>  
+                        <span class="icon"></span>
                     </div>
                     <div class="notify_data">
                         <div class="title">
-                            Lorem, ipsum dolor.  
+                            Lorem, ipsum dolor.
                         </div>
                         <div class="sub_title">
                           Lorem ipsum dolor sit amet consectetur.
                       </div>
                     </div>
                     <div class="notify_status">
-                        <p>Success</p>  
+                        <p>Success</p>
                     </div>
                 </li>
             </ul>
         </div> -->
     </div>
   </div>
-  
+
 </div>
 @endsection

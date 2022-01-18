@@ -16,7 +16,7 @@
       <img src="img/centralPalace.jpeg" alt="" style="margin-top:50px; margin-left:60px; height:150px; width:60%">
       <img src="img/logo.png" alt="" style="margin-top:250px; margin-left:60px; height:250px; width:60%">
         <!--<img src="images/frontImg.jpg" alt="">-->
-        
+
       </div>
       <div class="back">
         <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
@@ -45,13 +45,15 @@
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
                 <input type="text" class="form-control my-1" name="email" placeholder="Enter your email" required>
-                <div style= "background-color: #e74c3c">@error('email'){{$message}}@enderror</div>
               </div>
+              <div style= "background-color: #e74c3c">@error('email'){{$message}}@enderror</div>
+
               <div class="input-box">
                 <i class="fas fa-lock"></i>
                 <input type="password"  name="password" placeholder="Enter your password" required>
-                <div style= "background-color: #e74c3c">@error('password'){{$message}}@enderror</div>
               </div>
+              <div style= "background-color: #e74c3c">@error('password'){{$message}}@enderror</div>
+
               {{-- <div class="text"><a href="#">Forgot password?</a></div> --}}
               <div class="button input-box">
                 <input type="submit" value="Sumbit">

@@ -157,20 +157,18 @@ border-right: 0px; border-left: 0px; border-top: 0px; text-align:right;" id="oth
 
                 <tbody id="mybody">
 
-                    @for($i=0; $i < 2; $i++){
+                    @for($i=0; $i < count($bookitm); $i++){
                     <tr>
                         <td> {{ $i}}</td>
                         <td>{{ $bookitm[$i]->titmctg}}</td><br>
-                        @if($bookitm[$i]->titmctg == $bookitm[$i+1]->titmctg){
-                            @for($j=0; $j < 2; $j++){
+
+                            @for($j=0; $j < count($bookitm); $j++){
                                 <tr>
                                     <td> {{ $j}}</td>
                                     <td>{{ $bookitm[$j]->titmdsc}}</td><br>
                                 </tr>
                                 }
                                 @endfor
-                        }
-                        @endif
                     </tr>
                     }
                     @endfor
